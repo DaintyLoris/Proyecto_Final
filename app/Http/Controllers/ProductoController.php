@@ -14,7 +14,9 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        $productos = Producto::all();
+        //Dentro de Index acomodaremos la visualizacion principal
+        return view("productosIndex", compact('productos'));
     }
 
     /**
@@ -24,7 +26,6 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //
         return view('agregarProducto');
     }
 
@@ -36,7 +37,17 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required | max:255',
+            'precio' => 'required | integer | min:0',
+            'categoria' => 'required | max:255'
+        ]);
+
+        //Para enviar los datos ya validados al create
+        Producto::create($request->all());
+
+        //Redireccionando para no ver pantalla vacia
+        return redirect('/producto');
     }
 
     /**
@@ -47,7 +58,7 @@ class ProductoController extends Controller
      */
     public function show(Producto $producto)
     {
-        //
+        return view('productosShow', compact('producto'));
     }
 
     /**

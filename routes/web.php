@@ -18,6 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/agregarProducto', [ProductoController::class, 'create']);
-
-Route::post('/formValidate', [ProductoController::class, 'formValidation']);
+Route::resource('producto', ProductoController::class);

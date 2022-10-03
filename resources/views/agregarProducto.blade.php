@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contacto</title>
+        <title> Index </title>
         
 
     </head>
@@ -22,19 +22,19 @@
             </div>
         @endif
 
-        <form action="/formValidate" method="POST">
+        <form action="/producto" method="POST">
             @csrf
 
             <label for="name">Nombre de producto:</label><br>
-            <input type="text" name="nombreProducto" id="nombreProducto" value="{{ old('nombreProducto') }}">
+            <input type="text" name="nombre" id="nombre" value="{{ old('nombre') }}">
             <br>
 
-            <label for="email">Precio:</label><br>
-            <input type="text" name="precioProducto" id="precioProducto" value="{{ old('precioProducto') }}">
+            <label for="precio">Precio:</label><br>
+            <input type="text" name="precio" id="precio" value="{{ old('precio') }}">
             <br>
 
-            <label for="comentario">Categoria:</label><br>
-            <input type="text" name="categoriaProducto" id="categoriaProducto" value="{{ old('categoriaProducto') }}">
+            <label for="categoria">Categoria:</label><br>
+            <input type="text" name="categoria" id="categoria" value="{{ old('categoria') }}">
 
             </textarea>
             <br>
