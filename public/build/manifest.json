@@ -1,0 +1,22 @@
+{
+  "resources/js/app.js": {
+    "file": "assets/app.bf6b7b88.js",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/materialize.js": {
+    "file": "assets/materialize.32288e6f.js",
+    "src": "resources/js/materialize.js",
+    "isEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app.80acca4a.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/materialize.css": {
+    "file": "assets/materialize.8cc75222.css",
+    "src": "resources/css/materialize.css",
+    "isEntry": true
+  }
+}

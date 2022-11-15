@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Index </title>
-        
+        @vite(['resources/css/materialize.css', 'resources/js/materialize.js'])
 
     </head>
 
@@ -22,27 +22,35 @@
             </div>
         @endif
 
-        <form action="/producto" method="POST">
-            @csrf
+        <div class="row">
+            <form action="/producto" method="POST" class="col s12">
+                @csrf
 
-            <label for="name">Nombre de producto:</label><br>
-            <input type="text" name="nombre" id="nombre" value="{{ old('nombre') }}">
-            <br>
+                <div class="row">
 
-            <label for="precio">Precio:</label><br>
-            <input type="text" name="precio" id="precio" value="{{ old('precio') }}">
-            <br>
+                    <div class="input-field col s2">
+                        <input placeholder="Nombre Producto" name ="nombre" id="nombre" type="text" class="validate" value="{{  old('nombre')}}">
+                        <label for="name">Producto</label>
+                    </div>
 
-            <label for="categoria">Categoria:</label><br>
-            <input type="text" name="categoria" id="categoria" value="{{ old('categoria') }}">
+                    <div class="input-field col s1">
+                        <input placeholder="Precio $" name ="precio" id="precio" type="text" class="validate" value="{{ old('precio')}}">
+                        <label for="precio">Precio</label>
+                    </div>
+            
+                </div>
 
-            </textarea>
-            <br>
+                <div class="row">
+                    <div class="input-field col s2">
+                        <input placeholder="Categoria de producto" name ="categoria" id="categoria" type="text" class="validate" value="{{old('categoria')}}">
+                        <label for="categoria">Categoria</label>
+                    </div>
+                </div>
 
-            <br>
-            <input type="submit" value="Enviar">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
 
-        </form>
+            </form>
+        </div>
         
 
     </body>
