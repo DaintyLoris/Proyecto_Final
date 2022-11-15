@@ -17,7 +17,7 @@
 
         <hr>
 
-        <a href="/producto/create"> Agregar producto </a>
+        <a href="/producto/create"> Agregar nuevo producto </a>
         <br> <br>
 
         <table class="centered highlight responsive-table">
