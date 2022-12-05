@@ -13,24 +13,28 @@
     </head>
 
     <body>
-    
-        <h1> Landing Test </h1>
+
+    <!-- Navbar goes here -->
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo right">Inventory</a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="landing">Inicio</a></li>
+                </ul>
+            </div>
+        </nav>
         
-        <div class="row">
-            <div class="col s12 m6">
-            <div class="card blue-grey darken-1">
-                <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-                </div>
-                <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-                </div>
+        <body>
+            <div class="container">
+                <!-- Page Content goes here -->
+                <div class="divider"></div>
+                    <div class="section">
+                        <h5> Listado </h5>
+                        <a class="waves-effect waves-light btn">Ir a listado</a>
+                    </div>
             </div>
-            </div>
-        </div>
+        </body>
+
 
     </body>
 

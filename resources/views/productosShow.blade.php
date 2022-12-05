@@ -19,7 +19,17 @@
         <a href="/producto"> Listado de Productos </a>
         <br> <br>
 
-        <h2>Producto: {{ $producto->nombre }}</h2>
+        <h5>Producto:</h2>
+        <p>Detalles del producto: {{ $producto->nombre }}</p>
+        <p>Precio: {{ $producto->precio }}</p>
+        <p>Categoria: {{ $producto->categoria }}</p>
+        
+        <br>
+
+        <h5>Archivos:</h6>
+        <ul>
+                <li> {{ $archivo->nombre_original }} </li>
+        </ul>
 
 
 

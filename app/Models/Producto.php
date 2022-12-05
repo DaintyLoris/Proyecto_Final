@@ -9,4 +9,9 @@ class Producto extends Model
 {
     //
     protected $fillable = ['nombre', 'precio', 'categoria', 'updated_at', 'created_at'];
+
+    public function archivos()
+    {
+        return $this->hasMany(Archivo::class);
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Producto;
+use App\Models\archivo;
 use Illuminate\Http\Request;
 
 class ProductoController extends Controller
@@ -42,6 +43,24 @@ class ProductoController extends Controller
             'precio' => 'required | integer | min:0',
             'categoria' => 'required | max:255'
         ]);
+
+        //archivo
+        if($request->file('archivo')->isValid())
+        {
+            $ubicacion = $request->archivo->store('productos');
+            
+            $archivo = new archivo();
+
+            $producto = Producto::create($request->all());
+
+            $archivo->id = $producto->id;
+            $archivo->ubicacion = $ubicacion;
+            $archivo->nombre_original = $request->archivo->getClientOriginalName();
+            $archivo->mime = '';
+
+            $producto->save();
+
+        }
 
         //Para enviar los datos ya validados al create
         Producto::create($request->all());
@@ -90,6 +109,7 @@ class ProductoController extends Controller
         $producto->nombre = $request->nombre;
         $producto->precio = $request->precio;
         $producto->categoria = $request->categoria;
+
         $producto->save();
 
         return redirect('producto');
@@ -130,5 +150,10 @@ class ProductoController extends Controller
         */
 
         return redirect('/agregarProducto');
+    }
+
+    public function descargarArchivo(archivo $archivo)
+    {
+        return Storage::download($archivo->ubicacion);
     }
 }
